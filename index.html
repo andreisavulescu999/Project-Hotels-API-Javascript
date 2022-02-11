@@ -1,0 +1,313 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Search for your hotel!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+  </head>  
+<body>
+<nav class="navbar navbar-expand-lg  navbar-dark bg-primary ">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" aria-current="page" href="https://proiect.devteam.ro/"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+          <path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+        </svg> Hotels.ro</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid bg-dark bg-gradient">
+  <!-- locations/v2/search -->
+  <div class="row p-5">
+    <div class="col-md-6">
+      <div class="card bg-primary bg-gradient">
+          <div class="card-body text-center">
+            <h3 class="text-white">Select City you want to go:</h3>
+            <hr style="color:white;height: 3px;">
+            <form id="locations">
+              <label for="fname"class="text-white" >Place: <input type="text" id="city" name="place" value=""></label><br><br>
+              <label for="lname" class="text-white">Language:  <input type="text" id="locale" name="locale" value="en_US"></label><br><br>
+              <label for="lname" class="text-white">Curency: <input type="text" id="currency" name="currency" value="USD"></label><br><br>
+              <input type="submit" value="Submit">
+            </form>  
+          </div>
+      </div> 
+    </div>
+
+    <div class="col-md-6">
+      <div class="card bg-primary bg-gradient">
+        <div class="card-body text-center">
+          <h3 class="text-white">Select the place you want to go:</h3>
+          <hr style="color:white;height: 3px;">
+          <form id="">
+            <label for="fname" class="text-white" >Select The Group you want to visit: <select class="select-groups" id="" name="group"></select></label><br><br>
+            <label for="fname" class="text-white" >Select The Destination you want to visit: <select class="select-destination" id="" name="group"></select></label><br><br>
+            <!-- <input type="submit" value="Submit"> -->
+          </form> 
+        </div>
+      </div> 
+    </div>
+  </div>  
+<div class="container">
+  <div class="row display-destination">
+
+  </div>      
+</div> 
+
+<!-- properties/list -->
+<div class="row p-5">
+    <div class="col-md-3">
+      <div class="card bg-primary bg-gradient">
+          <div class="card-body text-center">
+            <h3 class="text-white">Book Your rezervation:</h3>
+            <hr style="color:white;height: 3px;">
+            <form id="destination">
+              <label for="fname"class="text-white">destination: <select class="destination-id" id="destinationid" name="destinationId"></select></label><br><br>
+              <label for="lname"class="text-white">pageNumber   <input type="number" id="pagenumber" name="pageNumber" value="1"></label><br><br>
+            
+              <label for="fname"class="text-white">pageSize: <input type="number" id="pagesize" name="pageSize" value="25"></label><br><br>
+              <label for="lname"class="text-white">checkIn: <input type="text" id="checkin" name="checkIn" value="2020-01-08"></label><br><br>
+            
+              <label for="fname"class="text-white">checkOut: <input type="text" id="checkout" name="checkOut" value="2020-01-15"></label><br><br>
+              <label for="fname"class="text-white">sortOrder: <input type="text" id="sortorder" name="sortOrder" value="PRICE"></label><br><br>
+              <label for="lname"class="text-white">adults1: <input type="number" id="adults1" name="adults1" value="2"></label><br><br>
+            
+              <!-- <label for="lname">adults2: <input type="number" id="adults2" name="adults2" value=""></label><br><br>
+              <label for="lname">adults3: <input type="number" id="adults3" name="adults3" value=""></label><br><br> -->
+              <input type="submit" value="Submit">
+            </form>  
+          </div>
+      </div> 
+    </div>
+    <div class="col-md-9">
+      <div class="card bg-primary bg-gradient">
+        <div class="card-body text-center">
+          <!-- <h3 class="text-white">Select the place you want to go:</h3> -->
+          <hr style="color:white;height: 3px;">
+          <form id="">
+            <label for="fname" class="text-white" >Select Accomodation: <select class="select-accomodation" id="accomodation" name="accomodation"></select></label><br><br>
+          </form> 
+        </div>
+      </div>
+    </div>
+</div>
+<div class="container">
+  <div class="row display-accomodation">
+
+  </div>      
+</div> 
+<hr>
+<hr>
+<hr>
+<div class="container">
+  <div class="row">
+  <div class="col-md-12  display-roompictures">
+  </div>
+</div> 
+</div>
+<hr>
+<hr>
+<hr>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12  display-hotelpictures">
+    </div>
+  </div>
+</div>
+
+
+
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+ var array_locations;
+ var groups = [];
+ var suggestions = [];
+ var entities = [];
+ var destination = [];
+ var destinations = [];
+ var rezervation = [];
+ var rezervations = [];
+ var results = [];
+ $("#locations").on("submit", function(e){
+  e.preventDefault();
+  city = $('#city').val();
+  locale = $('#locale').val();
+  currency = $('#currency').val();
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://hotels4.p.rapidapi.com/locations/v2/search?query="+city+"&"+locale+"&"+currency,
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "hotels4.p.rapidapi.com",
+        "x-rapidapi-key": "76d7f2fbd9msh9addd7e4df24759p118779jsne6c3a2a71f23"
+      }
+    };
+
+    $.ajax(settings).done(function (response) {
+      array_locations = response;
+      suggestions  = array_locations.suggestions;
+      
+      $.each(suggestions,function(index,value)
+      {
+          groups[index] = value.group;
+      });
+
+      var toAppend = '';
+      $.each(groups,function(i,o){
+        toAppend += '<option value="'+i+'">'+o+'</option>';
+        $('.select-groups').html(toAppend);
+      });
+
+        $('.select-groups').on("change", function() {
+          entities = suggestions[$(this).val()].entities; 
+          $.each(entities,function(index,value){
+                destination[index] = value;
+              });  
+          
+          var toAppend = '';
+          
+          $.each(destination,function(i,o){
+            // console.log(destination[i]);
+            toAppend += '<div class="col-md-3">'+'<div class="card "style="width: 20rem;"><div class="card-body">'+'<h5 class="card-title">'+destination[i].caption+'</h5>'+'<h6 class="card-subtitle mb-2 text-muted">'+destination[i].name+'</h6><p class="card-text">Tip: '+destination[i].type+'</p></div></div></div>';
+            $('.display-destination').html(toAppend);
+            });    
+
+          $.each(destination,function(index,value){
+                  destinations[index] = value.name;
+              }); 
+
+          var toAppend = '';
+          $.each(destinations,function(i,o){
+                toAppend += '<option value="'+i+'">'+o+'</option>';
+                $('.select-destination').html(toAppend);
+                });            
+          });
+        
+        $('.select-destination').on("change", function() {
+          var toAppend = '';
+          toAppend += '<option value="'+destination[$(this).val()].destinationId+'">'+destination[$(this).val()].name+'</option>';
+          $('.destination-id').html(toAppend);
+        });
+    });
+});
+
+$("#destination").on("submit", function(e){
+    e.preventDefault();
+    destinationid = $('#destinationid').val();
+    pagenumber = $('#pagenumber').val();
+    pagesize = $('#pagesize').val();
+
+    checkin = $('#checkin').val();
+    checkout = $('#checkout').val();
+    adults1 = $('#adults1').val();
+
+    sortorder = $('#sortorder').val();
+    locale = $('#locale').val();
+    currency = $('#currency').val();
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://hotels4.p.rapidapi.com/properties/list?destinationId="+destinationid+"&pageNumber="+pagenumber+"&pageSize="+pagesize+"&checkIn="+checkin+"&checkOut="+checkout+"&adults1="+adults1+"&sortOrder="+sortorder+"&locale="+locale+"&currency="+currency,
+      "method": "GET",
+      "headers": {
+        "x-rapidapi-host": "hotels4.p.rapidapi.com",
+        "x-rapidapi-key": "76d7f2fbd9msh9addd7e4df24759p118779jsne6c3a2a71f23"
+      }
+    };
+
+    $.ajax(settings).done(function (response) {
+          rezervations = response;
+          if(rezervations.result == 'ERROR')
+            alert('Select another group');
+          else
+          {
+            rezervations = rezervations.data.body.searchResults.results;
+          $.each(rezervations,function(index,value){
+                    rezervation[index] = value.name;
+                  }); 
+          var toAppend = '';           
+          $.each(rezervation,function(i,o){
+                    toAppend += '<option value="'+i+'">'+o+'</option>';
+                    $('.select-accomodation').html(toAppend);
+                    }); 
+          }
+          var toAppend = '';
+          $.each(rezervations,function(i,o){
+                    toAppend += '<div class="col-md-3 pb-1">'+'<div class="card shadow-lg"style="width: 18rem;"><div class="card-body">'+'<h5 class="card-title">'+rezervations[i].name+'</h5>'+'<p class="card-text">Address: '+rezervations[i].address.streetAddress+'</p>'+'<p class="card-text">Review: '+rezervations[i].guestReviews.rating+' from total of '+rezervations[i].guestReviews.total+'</p></div></div></div>';
+                    $('.display-accomodation').html(toAppend);
+                    }); 
+    });
+});
+
+$('.select-accomodation').on("change", function() {
+  var pictures        = [];
+  var roompictures    = [];
+  var hotelpictures   = [];
+  var roompicture     = [];
+  var hotelpicture    = [];
+  var hotelpictureurl = [];
+  var roompictureurl  = [];
+  var hotelurl        = [];
+ accomodation =  rezervations[$('#accomodation').val()].id;
+
+const settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://hotels4.p.rapidapi.com/properties/get-hotel-photos?id="+accomodation,
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "hotels4.p.rapidapi.com",
+		"x-rapidapi-key": "76d7f2fbd9msh9addd7e4df24759p118779jsne6c3a2a71f23"
+	            }
+                };
+  $.ajax(settings).done(function (response) {
+            pictures = response;
+            roompictures = pictures.roomImages;
+            hotelpictures = pictures.hotelImages;
+            $.each(roompictures,function(index,value){
+                roompicture = value.images;
+              });
+            $.each(hotelpictures,function(index,value){
+                    hotelpictureurl[index] = value.baseUrl;
+              });   
+            console.log(hotelpictureurl);     
+            // $.each(hotelpictureurl,function(index,value){
+            //         let text = value.baseUrl;
+            //         let newText = text.replace("{size}", "z");
+            //         hotelurl[index] = newText;
+            //   });
+      
+            $.each(roompicture,function(index,value){
+                    roompictureurl[index] = value.baseUrl;
+              });
+
+            var toAppend = ' ';
+            var a = 0;
+            $.each(hotelpictureurl,function(i,o){
+              let text = hotelpictureurl[i];
+              let newText = text.replace("{size}", "z");
+              urlhotel = newText;
+                  toAppend += '<img class="col-md-6 img-fluid" src="'+urlhotel+'" alt="First slide">';         
+                  $('.display-hotelpictures').html(toAppend);
+            }); 
+            var toAppend = ' ';
+            var a = 0;
+            $.each(roompictureurl,function(i,o){
+              let text = roompictureurl[i];
+              let newText = text.replace("{size}", "z");
+              urlroom = newText;
+                  toAppend += '<img class="col-md-6 img-fluid" src="'+urlroom+'" alt="">';     
+                  $('.display-roompictures').html(toAppend);
+            });           
+    });
+
+});
+</script>
+</body>
+
+</html>
